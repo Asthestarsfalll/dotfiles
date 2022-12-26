@@ -1,0 +1,14 @@
+{
+  "init": {
+    "prefix": "init",
+    "body": [
+      "#include<stdio.h>",
+      "",
+      "int main() {",
+      "",
+      "  return 0;",
+      "}"
+
+    ]
+  }
+}

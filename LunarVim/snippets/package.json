@@ -1,0 +1,19 @@
+{
+  "name": "nvim-snoppets",
+  "author": "Asthesrarsfalll",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "python",
+        "path": "./python.json"
+      },
+      {
+        "language": "c",
+        "path": "./c.json"
+      }
+    ]
+  }
+}
