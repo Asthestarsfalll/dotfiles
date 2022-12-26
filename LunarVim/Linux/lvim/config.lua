@@ -27,6 +27,10 @@ lvim.keys.normal_mode["<S-w>"] = ":bdelete %<CR>"
 lvim.keys.normal_mode["<S-n>"] = "ggVG:SnipRun<CR>"
 lvim.keys.normal_mode["<C-a>"] = "ggVG"
 
+lvim.builtin.which_key.mappings["u"] = {
+  name = "+User keymap",
+  c = { "<cmd>cd %:p:h<CR>:pwd<CR>", "change current file directory" }
+}
 -- lvim.keys.normal_mode["<S-x>"] = ":BufferClose<CR>"
 
 -- unmap a default keymapping
@@ -87,15 +91,15 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
-  "javascript",
+  -- "javascript",
   "json",
   "lua",
   "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
+  -- "typescript",
+  -- "tsx",
+  -- "css",
+  -- "rust",
+  -- "java",
   "yaml",
 }
 
@@ -105,10 +109,12 @@ lvim.builtin.treesitter.highlight.enable = true
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
--- lvim.lsp.installer.setup.ensure_installed = {
---     "sumneko_lua",
---     "jsonls",
--- }
+lvim.lsp.installer.setup.ensure_installed = {
+  "sumneko_lua",
+  "jsonls",
+  "pyright",
+  "clangd"
+}
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
 -- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = false
@@ -215,9 +221,9 @@ require("scratch").setup {
 	filetypes = { "json", "xml", "go", "lua", "js", "py", "sh", "c", "cuda", "cpp" },   -- filetypes to select from
 }
 
-vim.keymap.set("n", "<S-n>", "<cmd>Scratch<cr>")
-vim.keymap.set("n", "<S-m>", "<cmd>ScratchWithName<cr>")
-vim.keymap.set("n", "<S-o>", "<cmd>ScratchOpen<cr>")
+-- vim.keymap.set("n", "<S-n>", "<cmd>Scratch<cr>")
+-- vim.keymap.set("n", "<S-m>", "<cmd>ScratchWithName<cr>")
+-- vim.keymap.set("n", "<S-o>", "<cmd>ScratchOpen<cr>")
 
 
 require("icon-picker").setup({ disable_legacy_commands = true })
@@ -312,6 +318,6 @@ local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<C-i>", "<cmd>IconPickerNormal<cr>", opts)
 vim.keymap.set("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
--- vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
 vim.keymap.set("i", "<C-h>", "<Left>")
+ -- vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
 vim.keymap.set("i", "<C-j>", "<Down>")
