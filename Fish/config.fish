@@ -6,8 +6,7 @@ eval /opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 export TERMINFO=/usr/share/terminfo
 
 function fish_greeting
-  set_color purple
-  echo "As The Stars Fall" | figlet
+  echo "As The Stars Fall" | figlet | lolcat
 end
 
 function fish_title
@@ -19,7 +18,7 @@ end
 
 # set git alias
 alias gal 'git add --all'
-alias gstatus 'git status'
+alias gst 'git status'
 alias gcommit 'git commit -m'
 alias gamend 'git commit --amend'
 alias gpf 'git push -f'
@@ -45,4 +44,6 @@ alias baibai 'sudo pacman -R'
 
 alias SystemCache 'du -sh ~/.cache/* | sort -h'
 alias autoClean 'find ~/.cache/ -type f -atime +100 -delete'
-alias makeGrub ' sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias makeGrub 'sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
+alias setWallpaper 'feh --randomize --bg-fill'

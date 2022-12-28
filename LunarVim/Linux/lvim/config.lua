@@ -312,6 +312,7 @@ require'sniprun'.setup({
 vim.opt.shell = '/bin/bash'
 vim.opt.termguicolors = true
 vim.g.material_style = 'palenight'
+vim.opt.relativenumber = true
 -- vim.o.background = 'dark'
 
 local opts = { noremap = true, silent = true }
