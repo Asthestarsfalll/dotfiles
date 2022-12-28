@@ -21,6 +21,7 @@ alias gal 'git add --all'
 alias gst 'git status'
 alias gcommit 'git commit -m'
 alias gamend 'git commit --amend'
+alias glog 'git log'
 alias gpf 'git push -f'
 alias gpull 'git pull'
 alias gpush 'git push'
@@ -47,3 +48,5 @@ alias autoClean 'find ~/.cache/ -type f -atime +100 -delete'
 alias makeGrub 'sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 alias setWallpaper 'feh --randomize --bg-fill'
+
+alias ch 'cd ~'

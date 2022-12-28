@@ -13,3 +13,15 @@ echo "Update config of oh-my-fish" | lolcat
 
 ls -1 $OMF_PATH/themes/agnoster/functions
 cp -r $OMF_PATH/themes/agnoster/functions/* ./oh-my-fish/theme/
+
+echo "Update config of picom" | lolcat
+
+ls -1 ~/.config/picom/
+cp ~/.config/picom/picom.conf ./picom/
+
+
+echo "Update scripts" | lolcat
+
+ls -1 ~/scripts/
+cp -r ~/scripts/* ./scripts/
+
