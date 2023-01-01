@@ -20,6 +20,12 @@ ls -1 ~/.config/picom/
 cp ~/.config/picom/picom.conf ./picom/
 
 
+echo "Update config of rofi" | lolcat
+
+ls -1 ~/.config/rofi/
+cp ~/.config/rofi/config.rasi ./rofi/config.rasi
+cp /usr/share/rofi/themes/arthur.rasi ./rofi/arthur.rasi
+
 echo "Update scripts" | lolcat
 
 ls -1 ~/scripts/

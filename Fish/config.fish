@@ -50,3 +50,7 @@ alias makeGrub 'sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias setWallpaper 'feh --randomize --bg-fill'
 
 alias ch 'cd ~'
+
+alias vim 'neovide --multigrid --neovim-bin ~/.local/bin/lvim'
+
+alias pv 'sh ~/scripts/preview.sh'
