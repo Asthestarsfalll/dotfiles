@@ -1,5 +1,13 @@
 #!/usr/bin/sh
-
-feh --randomize --bg-fill /data/data/wallpaper/01ed913b2de348a4a4d5e567144d05e8.jpg
-picom --experimental-backends --config ~/.config/picom/picom.conf
+fcitx5 &
+screen_count=$(xrandr | grep 'connected' -w | wc -l)
+if [ ${screen_count} -gt 1 ];then
+  xrandr --output eDP-1 --off
+  xrandr --output DP-2 --mode 2560x1440 
+fi
+rm ~/scripts/statusbar/temp
+feh --randomize --bg-fill /data/data/wallpaper/1a3b07858a099b22841e647f6daf4237.jpeg
+picom --config ~/.config/picom/picom.conf &
+sh $HOME/scripts/statusbar/statusbar.sh cron &
+dunst -conf ~/.config/dunst/dunstrc &
 

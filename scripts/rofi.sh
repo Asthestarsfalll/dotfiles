@@ -9,18 +9,19 @@
 # source ~/.profile
 
 ##### MAIN_MENU ####
-    main_menu_items=('1. set wallpaper' '2. update statusbar' '3. toggle server' '4. set backlight' '5. power menu')
+    main_menu_items=('1. set wallpaper' '2. update statusbar' '3. toggle server' '4. set backlight' '5. power menu' '6. lock screen')
     main_menu_cmds=(
         'feh --randomize --bg-fill /data/data/wallpaper/*.png; show_main_menu' # 执行完不退出脚本继续执行show_main_menu
         'coproc ($DWM/statusbar/statusbar.sh updateall > /dev/null 2>&1); show_main_menu'
         'show_toggle_server_menu'
         'show_set_backlight_menu'
         'show_power_menu'
+        'sh ~/scripts/lockscreen.sh*'
     )
 
 ##### TOGGLE_SERVER_MENU #####
     toggle_server_menu_items[2]='open picom'
-    toggle_server_menu_cmds[2]='coproc (picom --experimental-backends --config ~/.config/picom/picom.conf > /dev/null 2>&1)'
+    toggle_server_menu_cmds[2]='coproc (picom --config ~/.config/picom/picom.conf > /dev/null 2>&1)'
     # 根据不同的条件判断单项的值和操作
     [ "$(ps aux | grep picom | grep -v 'grep\|rofi\|nvim')" ] && toggle_server_menu_items[2]='close picom' 
     [ "$(ps aux | grep picom | grep -v 'grep\|rofi\|nvim')" ] && toggle_server_menu_cmds[2]='killall picom'

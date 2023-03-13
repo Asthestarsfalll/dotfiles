@@ -25,7 +25,7 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 lvim.keys.normal_mode["<S-w>"] = ":bdelete %<CR>"
 lvim.keys.normal_mode["<S-n>"] = "ggVG:SnipRun<CR>"
-lvim.keys.normal_mode["<C-a>"] = "ggVG"
+-- lvim.keys.normal_mode["<C-a>"] = "ggVG"
 
 lvim.builtin.which_key.mappings["u"] = {
   name = "+User keymap",
@@ -130,9 +130,11 @@ lvim.lsp.installer.setup.ensure_installed = {
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })"
--- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pyright", opts)
+local opts = {} -- check the lspconfig documentation for a list of all possible options
+require("lvim.lsp.manager").setup("pyright", opts)
+-- opts = { cmd = { "clangd", "--fallback-style=none" } }
 
+-- require("lvim.lsp.manager").setup("clangd", opts)
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
@@ -195,7 +197,7 @@ formatters.setup {
   --   ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
   --   filetypes = { "typescript", "typescriptreact" },
   -- },
-  { command = "clang_format", filetypes = { "c", "c++", "cuda"} }
+  -- { command = "clang_format", filetypes = { "c", "c++", "cuda"} }
 }
 
 -- -- set additional linters

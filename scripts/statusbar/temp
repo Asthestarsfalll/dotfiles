@@ -1,0 +1,7 @@
+export _bat='^c#2D1B46^^b#4E5166^^sbat^  69% ^d^'
+export _wifi='^c#442266^^b#385056^^swifi^ 直 GUET-WiFi ^d^'
+export _cpu='^c#223344^^b#4F5165^^scpu^ 閭 03%  ^d^'
+export _mem='^c#442266^^b#385056^^smem^  08% ^d^'
+export _vol='^c#442266^^b#385056^^svol^ 婢 00% ^d^'
+export _icons='^c#2D1B46^^b#335566^^sicons^    ^d^'
+export _date='^c#223344^^b#4E5168^^sdate^  03/13 12:54 ^d^'

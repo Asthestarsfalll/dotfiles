@@ -3,7 +3,14 @@ set CONDA_PATH /opt/miniconda3
 # !! Contents within this block are managed by 'conda init' !!
 eval /opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
+
 export TERMINFO=/usr/share/terminfo
+set -gx ATUIN_NOBIND "true"
+atuin init fish | source
+
+# 在 normal 和 insert 模式下绑定到 ctrl-r，你也可以在此处添加其他键位绑定
+bind \cr _atuin_search
+bind -M insert \cr _atuin_search
 
 function fish_greeting
   echo "As The Stars Fall" | figlet | lolcat
@@ -12,7 +19,6 @@ end
 function fish_title
   prompt_pwd
 end
-
 
 # set alias
 
@@ -54,3 +60,6 @@ alias ch 'cd ~'
 alias vim 'neovide --multigrid --neovim-bin ~/.local/bin/lvim'
 
 alias pv 'sh ~/scripts/preview.sh'
+alias lv 'lvim'
+
+alias ':q' 'cd ..'

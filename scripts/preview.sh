@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # 在terminal中预览图片的脚本
 # usage: bash preview_img.sh <img_path>
 # requires: ueberzug
@@ -44,7 +42,7 @@ function draw_preview {
         tput cup $((LINES - 11))
         Y=$((LINES - 10))
     fi
-
+    echo "${@}"
     >"${UEBERZUG_FIFO}" declare -A -p cmd=( \
         [action]=add [identifier]="${PREVIEW_ID}" \
         [x]="${X}" [y]="${Y}" \
