@@ -17,6 +17,8 @@ Write-Host "As The Stars Fall." -ForegroundColor Magenta -BackgroundColor DarkBl
 # 设置预测文本来源为历史记录
 Set-PSReadLineOption -PredictionSource History
 
+Set-PSReadLineOption -ShowToolTips
+
 # 每次回溯输入历史，光标定位于输入内容末尾
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 

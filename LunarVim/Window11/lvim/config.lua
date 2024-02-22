@@ -171,8 +171,6 @@ lvim.lsp.installer.setup.automatic_installation = true
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 
-require("python")
-require("c")
 -- require("lvim.lsp.manager").setup("clangd")
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 --   return server ~= "emmet_ls"
