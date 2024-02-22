@@ -39,6 +39,15 @@ function trash
        mv $arg ~/.trashbin/$arg-$del_date
     end
 end
+
+function na
+	set tmp (mktemp -t "yazi-cwd.XXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
  
 # set alias
 # alias rm trash
@@ -93,3 +102,5 @@ alias ':q' 'cd ..'
 alias 'px' 'proxychains4 -f ~/scripts/proxychains.conf'
 
 alias nv nvim
+
+alias changeSource 'sudo pacman-mirrors -c China'

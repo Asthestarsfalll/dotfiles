@@ -37,3 +37,9 @@ echo "Update wezterm" | lolcat
 ls -1 ~/.config/wezterm/
 cp -r ~/.config/wezterm/* ./wezterm/
 
+
+echo "Update yazi" | lolcat
+
+ls -1 ~/.config/yazi/
+cp -r ~/.config/yazi/* ./yazi/
+
