@@ -4,8 +4,7 @@
 # source ~/.profile
 DWM=$HOME/scripts
 this=_icons
-s2d_reset="^d^"
-color="^c#2D1B46^^b#335566^"
+color="^c#7B102B^^b#5555660x66^"
 signal=$(echo "^s$this^" | sed 's/_//')
 
 update() {
@@ -18,8 +17,7 @@ update() {
 
     sed -i '/^export '$this'=.*$/d' $DWM/statusbar/temp
     text=" ${icons[@]} "
-    echo $text
-    printf "export %s='%s%s%s%s'\n" $this "$color" "$signal" "$text" "$s2d_reset" >> $DWM/statusbar/temp
+    printf "export %s='%s%s%s%s'\n" $this "$signal" "$color" "$text" >> $DWM/statusbar/temp
 }
 
 notify() {
@@ -42,8 +40,10 @@ call_menu() {
 click() {
     case "$1" in
         L) notify; feh --randomize --bg-fill /data/data/wallpaper/*.png ;;
-        R) call_menu ;;
+        M) call_menu ;;
+        R) feh --randomize --bg-fill /data/data/wallpaper/1.png
     esac
+
 }
 
 case "$1" in

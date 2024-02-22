@@ -4,19 +4,22 @@ DWM=$HOME/scripts
 # source ~/.profile
 
 this=_cpu
-s2d_reset="^d^"
-color="^c#223344^^b#4F5165^"
+# color="^c#223344^^b#4F5165^"
+# color="^c#ebbcba^^b#31748f^"
+icon_color="^c#3E206F^^b#6E51760x88^"
+text_color="^c#3E206F^^b#6E51760x99^"
 signal=$(echo "^s$this^" | sed 's/_//')
 
 update() {
     cpu_icon="閭"
     cpu_text=$(top -n 1 -b | sed -n '3p' | awk '{printf "%02d%", 100 - $8}')
-    temp_text=$(sensors | grep Tctl | awk '{printf "%d°C", $2}')  
+    temp_text=$(sensors | grep Package | awk '{print substr($4, 2)}'
+)  
 
-    text=" $cpu_icon $cpu_text $temp_text "
-    echo $text
+    text=" $cpu_text $temp_text "
     sed -i '/^export '$this'=.*$/d' $DWM/statusbar/temp
-    printf "export %s='%s%s%s%s'\n" $this "$color" "$signal" "$text" "$s2d_reset" >> $DWM/statusbar/temp
+    # printf "export %s='%s%s%s%s'\n" $this "$color" "$signal" "$text" "$s2d_reset" >> $DWM/statusbar/temp
+    printf "export %s='%s%s%s%s%s'\n" $this "$signal" "$icon_color" " $cpu_icon " "$text_color" "$text" >> $DWM/statusbar/temp
 }
 
 notify() {
@@ -28,7 +31,7 @@ call_btop() {
     pid2=`ps aux | grep 'st -t statusutil_cpu' | grep -v grep | awk '{print $2}'`
     mx=`xdotool getmouselocation --shell | grep X= | sed 's/X=//'`
     my=`xdotool getmouselocation --shell | grep Y= | sed 's/Y=//'`
-    kill $pid1 && kill $pid2 || st -t statusutil_cpu -g 82x25+$((mx - 328))+$((my + 20)) -c noborder -e btop
+    kill $pid1 && kill $pid2 || st -t statusutil_cpu -g 82x25+$((mx - 328))+$((my + 20)) -c float -e btop
 }
 
 click() {

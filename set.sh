@@ -50,3 +50,7 @@ ls -1 ./rofi/
 cp ./rofi/config.rasi ~/.config/rofi/config.rasi
 cp ./rofi/arthur.rasi /usr/share/rofi/themes/
 
+echo "set wezterm" | lolcat
+
+ls -1 ./wezterm
+cp -r ./wezterm/* ~/.config/wezterm/

@@ -4,8 +4,9 @@
 # source ~/.profile
 DWM=$HOME/scripts
 this=_date
-s2d_reset="^d^"
-color="^c#223344^^b#4E5168^"
+# color="^c#223344^^b#4E5168^"
+icon_color="^c#4B005B^^b#7E51680x88^"
+text_color="^c#4B005B^^b#7E51680x99^"
 signal=$(echo "^s$this^" | sed 's/_//')
 
 update() {
@@ -25,10 +26,10 @@ update() {
         "12") time_icon="" ;;
     esac
 
-    text=" $time_icon $time_text "
-    echo $text
+    icon=" $time_icon "
+    text=" $time_text "
     sed -i '/^export '$this'=.*$/d' $DWM/statusbar/temp
-    printf "export %s='%s%s%s%s'\n" $this "$color" "$signal" "$text" "$s2d_reset" >> $DWM/statusbar/temp
+    printf "export %s='%s%s%s%s%s'\n" $this "$signal" "$icon_color" "$icon" "$text_color" "$text" >> $DWM/statusbar/temp
 }
 
 notify() {
@@ -42,12 +43,21 @@ call_todo() {
     pid2=`ps aux | grep 'st -t statusutil_todo' | grep -v grep | awk '{print $2}'`
     mx=`xdotool getmouselocation --shell | grep X= | sed 's/X=//'`
     my=`xdotool getmouselocation --shell | grep Y= | sed 's/Y=//'`
-    kill $pid1 && kill $pid2 || st -t statusutil_todo -g 50x15+$((mx - 200))+$((my + 20)) -c noborder -e lvim ~/.todo.md 
+    kill $pid1 && kill $pid2 || st -t statusutil_todo -g 50x15+$((mx - 200))+$((my + 20)) -c FGN -e nvim ~/.todo.md 
+}
+
+on_left() {
+    pid1=`ps aux | grep 'st -t statusutil' | grep -v grep | awk '{print $2}'`
+    pid2=`ps aux | grep 'st -t statusutil_cal' | grep -v grep | awk '{print $2}'`
+    mx=`xdotool getmouselocation --shell | grep X= | sed 's/X=//'`
+    my=`xdotool getmouselocation --shell | grep Y= | sed 's/Y=//'`
+    kill $pid1 && kill $pid2 || st -t statusutil_nm -g 60x25+$((mx - 200))+$((my + 20)) -c FGN -e 'calcurse'
 }
 
 click() {
     case "$1" in
-        L) notify ;;
+        L) on_left ;; 
+        M) notify ;;
         R) call_todo ;;
     esac
 }

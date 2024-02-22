@@ -1,34 +1,47 @@
 #! /bin/bash
 
+BLANK='#00000000'
+CLEAR='#ffffff22'
+DEFAULT='#cdb0eecc'
+TEXT='#f48484ee'
+WRONG='#880000bb'
+VERIFYING='#bb00bbbb'
+
 i3lock \
-    --blur 5 \
-    --bar-indicator \
-    --bar-pos y+h \
-    --bar-direction 1 \
-    --bar-max-height 50 \
-    --bar-base-width 50 \
-    --bar-color 00000022 \
-    --keyhl-color ffffffcc \
-    --bar-periodic-step 50 \
-    --bar-step 20 \
-    --redraw-thread \
-    --clock \
-    --force-clock \
-    --time-pos x+w/2-60:y+h/4 xdotool\
-    --time-color ffffffff \
-    --date-pos tx:ty+15 \
-    --date-color ffffffff \
-    --date-align 1 \
-    --time-align 1 \
-    --ringver-color ffffff00 \
-    --ringwrong-color ffffff88 \
-    --status-pos x:y\
-    --verif-align 1 \
-    --wrong-align 1 \
-    --verif-color ffffffff \
-    --wrong-color ffffffff \
-    --greeter-text="xxxx" \
-    --no-modkey-text \
-    --time-font=sans-serif-50
-    # --modif-pos -50:-50
-# xdotool mousemove_relative 1 1 # 该命令用于解决自动锁屏后未展示锁屏界面的问题(移动一下鼠标)
+--insidever-color=$CLEAR     \
+--ringver-color=$VERIFYING   \
+\
+--insidewrong-color=$CLEAR   \
+--ringwrong-color=$WRONG     \
+\
+--inside-color=$BLANK        \
+--ring-color=$DEFAULT        \
+--line-color=$BLANK          \
+--separator-color=$DEFAULT   \
+\
+--verif-color=$TEXT          \
+--wrong-color=#ff0000          \
+--time-color=$TEXT           \
+--date-color=#a5c689      \
+--layout-color=$TEXT         \
+--keyhl-color=$WRONG         \
+--bshl-color=$WRONG          \
+\
+--screen 1                   \
+--blur 3                     \
+--clock                      \
+--force-clock                      \
+--indicator                  \
+--time-str="%H:%M:%S"        \
+--time-size=128              \
+--date-str="%A  %Y-%m-%d"       \
+--date-size=30              \
+--wrong-size=60              \
+--verif-size=60              \
+--radius=300             \
+--pointer default     \
+--show-failed-attempts      
+# --keylayout 1                \
+# --time-font="Monaco"        \
+
+xdotool mousemove_relative 1 1 # 该命令用于解决自动锁屏后未展示锁屏界面的问题(移动一下鼠标)

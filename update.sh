@@ -31,3 +31,9 @@ echo "Update scripts" | lolcat
 ls -1 ~/scripts/
 cp -r ~/scripts/* ./scripts/
 
+
+echo "Update wezterm" | lolcat
+
+ls -1 ~/.config/wezterm/
+cp -r ~/.config/wezterm/* ./wezterm/
+

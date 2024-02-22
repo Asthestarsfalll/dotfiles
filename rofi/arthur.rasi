@@ -45,7 +45,9 @@
     //
     // Bold, Italic, Underline
     highlight:     underline bold #ffffff;
+
     transparent: rgba(0,0,0,0);
+    font: "Source Code Pro 15";
 }
 window {
     location: center;
@@ -64,21 +66,6 @@ mainbox {
     spacing: 0;
     children: [ inputbar, message, listview ];
 }
-
-wrapper-mode-switcher {
-    orientation: horizontal;
-    expand:     false;
-    spacing:    100;
-    children: [ mode-switcher ];
-}
-
-mode-switcher {
-    border:  2px 2px 2px 2px;
-
-    border-color: @foreground; 
-    spacing: 0px;
-    expand: true;
-}
 message {
     border-color: @foreground;
     border:  0px 2px 2px 2px;
@@ -87,15 +74,17 @@ message {
     background-color: @tcyan;
 }
 message {
+    font: "Source Code Pro 8";
     color: @black;
 }
 inputbar {
-    color: @red;
+    color: @lightgreen;
     padding: 11px;
     background-color: @tlightblack;
     border: 2px 2px 2px 2px;
     border-radius:  15px 15px 0px 0px;
     border-color: @foreground;
+    font: "Source Code Pro 18";
 }
 entry,prompt,case-indicator {
     text-font: inherit;
@@ -161,13 +150,14 @@ vertb {
 dummy0,  dummy1 {
     expand: true;
 }
-/* mode-switcher { */
-/*     expand: false; */
-/*     orientation: vertical; */
-/*     spacing: 0px; */
-/*     border: 0px 0px 0px 0px; */
-/* } */
+mode-switcher {
+    expand: false;
+    orientation: vertical;
+    spacing: 0px;
+    border: 0px 0px 0px 0px;
+}
 button {
+    font: "FontAwesome 28";
     padding: 6px;
     border: 2px 0px 2px 2px;
     border-radius: 4px 0px 0px 4px;

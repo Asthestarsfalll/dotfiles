@@ -4,8 +4,10 @@ DWM=$HOME/scripts
 # source ~/.profile
 
 this=_bat
-s2d_reset="^d^"
-color="^c#2D1B46^^b#4E5166^"
+icon_color="^c#3B001B^^b#4865660x88^"
+text_color="^c#3B001B^^b#4865660x99^"
+# color="^c#2D1B46^^b#31748f^"
+# color="^c#eb6f92^^b#1f1d2e^"
 signal=$(echo "^s$this^" | sed 's/_//')
 
 update() {
@@ -17,20 +19,19 @@ update() {
     elif [ "$bat_text" -ge 80 ]; then bat_icon="";
     elif [ "$bat_text" -ge 70 ]; then bat_icon="";
     elif [ "$bat_text" -ge 60 ]; then bat_icon="";
-    elif [ "$bat_text" -ge 50 ]; then bat_icon="";
-    elif [ "$bat_text" -ge 40 ]; then bat_icon="";
-    elif [ "$bat_text" -ge 30 ]; then bat_icon="";
-    elif [ "$bat_text" -ge 20 ]; then bat_icon="";
-    elif [ "$bat_text" -ge 10 ]; then bat_icon="";
-    else bat_icon=""; fi
+    elif [ "$bat_text" -ge 50 ]; then bat_icon="" icon_color="^c#eb6f92^^b#4865660x88^";
+    elif [ "$bat_text" -ge 40 ]; then bat_icon="" icon_color="^c#eb6f92^^b#4865660x88^";
+    elif [ "$bat_text" -ge 30 ]; then bat_icon="" icon_color="^c#eb6f92^^b#4865660x88^";
+    elif [ "$bat_text" -ge 20 ]; then bat_icon="" icon_color="^c#eb6f92^^b#4865660x88^";
+    elif [ "$bat_text" -ge 10 ]; then bat_icon="" icon_color="^c#eb6f92^^b#4865660x88^";
+    else bat_icon="" icon_color="^c#eb6f92^^b#4865660x88^" ; fi
 
-    bat_text=$bat_text%
-    bat_icon=$charge_icon$bat_icon
+    # bat_text=" $bat_text% "
+    bat_text=""
+    bat_icon=" $charge_icon$bat_icon  "
 
-    text=" $bat_icon $bat_text "
-    echo $text
     sed -i '/^export '$this'=.*$/d' $DWM/statusbar/temp
-    printf "export %s='%s%s%s%s'\n" $this "$color" "$signal" "$text" "$s2d_reset" >> $DWM/statusbar/temp
+    printf "export %s='%s%s%s%s%s'\n" $this "$signal" "$icon_color" "$bat_icon" "$text_color" "$bat_text" >> $DWM/statusbar/temp
 }
 
 notify() {
@@ -45,7 +46,10 @@ notify() {
 click() {
     case "$1" in
         L) notify ;;
-        R) killall xfce4-power-manager-settings || xfce4-power-manager-settings & ;;
+        # R) killall xfce4-power-manager-settings || xfce4-power-manager-settings & ;;
+        M) powerprofilesctl set balanced && dunstify -h string\:x-dunst-stack-tag\:power-mode Balanced mode ;;
+        U) powerprofilesctl set performance && dunstify -h string\:x-dunst-stack-tag\:power-mode Performance mode ;; 
+        D) powerprofilesctl set power-saver && dunstify -h string\:x-dunst-stack-tag\:power-mode Power-saver mode
     esac
 }
 

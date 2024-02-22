@@ -8,19 +8,41 @@ export TERMINFO=/usr/share/terminfo
 set -gx ATUIN_NOBIND "true"
 atuin init fish | source
 
+set PATH $PATH: ~/.cargo/bin
+
 # 在 normal 和 insert 模式下绑定到 ctrl-r，你也可以在此处添加其他键位绑定
 bind \cr _atuin_search
 bind -M insert \cr _atuin_search
 
 function fish_greeting
-  echo "As The Stars Fall" | figlet | lolcat
+  set col (tput cols)
+  if test $col -gt 131
+    cat ~/.config/nvim/lua/user/plugins/Asuka.txt
+  else
+    cat ~/.config/nvim/lua/user/plugins/02.txt
+  end
+
 end
+
 
 function fish_title
   prompt_pwd
 end
 
+fish_config theme choose "Rosé Pine"
+
+function trash
+    set del_date (date +%Y%m%d%H%M%S)
+    for arg in $argv
+       echo $arg
+       mkdir ~/.trashbin/$arg-$del_date
+       mv $arg ~/.trashbin/$arg-$del_date
+    end
+end
+ 
 # set alias
+# alias rm trash
+alias rl 'ls ~/.trashbin/'
 
 # set git alias
 alias gal 'git add --all'
@@ -38,6 +60,8 @@ alias gri 'git rebase -i'
 alias gnew 'git checkout -b'
 alias gswich 'git checkout'
 alias gbranch 'git branch'
+alias gsta 'git stash'
+alias gsp 'git stash pop'
 
 # set system alias
 
@@ -56,6 +80,9 @@ alias makeGrub 'sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias setWallpaper 'feh --randomize --bg-fill'
 
 alias ch 'cd ~'
+alias cw 'cd /data/workspace'
+alias cb 'cd /data/workspace/Blog'
+alias cs 'nv ~/.scratch.md'
 
 alias vim 'neovide --multigrid --neovim-bin ~/.local/bin/lvim'
 
@@ -63,3 +90,6 @@ alias pv 'sh ~/scripts/preview.sh'
 alias lv 'lvim'
 
 alias ':q' 'cd ..'
+alias 'px' 'proxychains4 -f ~/scripts/proxychains.conf'
+
+alias nv nvim
