@@ -88,7 +88,7 @@ local keys = {
    },
    {
       key = [[0]],
-      mods = mod.SUPER,
+      mods = mod.SUPER_REV,
       action = wezterm.action_callback(function(window, _pane)
          backdrops:remove(window)
       end),

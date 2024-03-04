@@ -50,7 +50,7 @@ permissions_s = { fg = "#524f67" }
 
 
 [input]
-border = { fg = "#31748f" }
+border = { fg = "#9ccfd8" }
 title = {}
 value = {}
 selected = { reversed = true }
@@ -102,5 +102,5 @@ rules = [
 
   # Fallback
   { name = "*", fg = "#e0def4" },
-  { name = "*/", fg = "#524f67" },
+  { name = "*/", fg = "#2A273F" },
 ]

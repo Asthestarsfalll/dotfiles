@@ -10,20 +10,17 @@ return {
    color_scheme = 'rose-pine',
 
    -- background
-   -- background = {
-   --    {
-   --       source = { File = wezterm.GLOBAL.background },
-   --    },
-   --    {
-   --       source = { Color = '#191919' },
-   --       height = '100%',
-   --       width = '100%',
-   --       opacity = 0.5,
-   --    },
-   -- },
+   background = {
+      {
+         source = { Color = '#191919' },
+         height = '100%',
+         width = '100%',
+         opacity = 0.5,
+      },
+   },
 
    -- scrollbar
-   enable_scroll_bar = true,
+   enable_scroll_bar = false,
 
    -- tab bar
    enable_tab_bar = true,

@@ -25,7 +25,7 @@ function BackDrops:init()
       files = {},
    }
    local backdrops = setmetatable(inital, self)
-   self.opacity = 0.5
+   self.opacity = 0
    self.is_empty = true
    return backdrops
 end
@@ -37,8 +37,8 @@ end
 ---in the initial load of the Terminal config
 function BackDrops:set_files()
    self.files = wezterm.read_dir('/data/wezterm_background')
-   wezterm.GLOBAL.background = '/data/wezterm_background/space man.png'
-   self.is_empty = false
+   -- wezterm.GLOBAL.background = '/data/wezterm_background/space man.png'
+   self.is_empty = true
    return self
 end
 

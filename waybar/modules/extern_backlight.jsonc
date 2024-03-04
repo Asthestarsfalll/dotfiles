@@ -1,0 +1,7 @@
+    "custom/ddcutil": {
+    "format": "{percentage}% {icon}",
+    "interval": 1,
+    "format-icons": ["", "", ""],
+    "exec": "./",
+    "return-type": "json"
+    },

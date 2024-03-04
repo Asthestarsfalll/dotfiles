@@ -20,11 +20,11 @@ ls -1 ~/.config/picom/
 cp ~/.config/picom/picom.conf ./picom/
 
 
-echo "Update config of rofi" | lolcat
-
-ls -1 ~/.config/rofi/
-cp ~/.config/rofi/config.rasi ./rofi/config.rasi
-cp /usr/share/rofi/themes/arthur.rasi ./rofi/arthur.rasi
+# echo "Update config of rofi" | lolcat
+#
+# ls -1 ~/.config/rofi/
+# cp ~/.config/rofi/config.rasi ./rofi/config.rasi
+# cp /usr/share/rofi/themes/arthur.rasi ./rofi/arthur.rasi
 
 echo "Update scripts" | lolcat
 
@@ -43,3 +43,12 @@ echo "Update yazi" | lolcat
 ls -1 ~/.config/yazi/
 cp -r ~/.config/yazi/* ./yazi/
 
+echo "Update hypr" | lolcat
+
+ls -1 ~/.config/hypr/
+cp -r ~/.config/hypr/* ./hypr/
+
+echo "Update waybar" | lolcat
+
+ls -1 ~/.config/waybar/
+cp -r ~/.config/waybar/* ./waybar/
