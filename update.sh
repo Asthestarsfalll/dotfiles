@@ -1,13 +1,7 @@
-echo "Update config of LunarVIM" | lolcat
-
-ls -1 ~/.config/lvim
-cp -r ~/.config/lvim/* ./LunarVim/Linux/lvim/
-
 echo "Update config of fish" | lolcat
 
 ls -1 ~/.config/fish
 cp -r ~/.config/fish/* ./Fish/
-
 
 echo "Update config of oh-my-fish" | lolcat
 
@@ -18,7 +12,6 @@ echo "Update config of picom" | lolcat
 
 ls -1 ~/.config/picom/
 cp ~/.config/picom/picom.conf ./picom/
-
 
 # echo "Update config of rofi" | lolcat
 #
@@ -31,12 +24,10 @@ echo "Update scripts" | lolcat
 ls -1 ~/scripts/
 cp -r ~/scripts/* ./scripts/
 
-
 echo "Update wezterm" | lolcat
 
 ls -1 ~/.config/wezterm/
 cp -r ~/.config/wezterm/* ./wezterm/
-
 
 echo "Update yazi" | lolcat
 
