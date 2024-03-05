@@ -1,45 +1,32 @@
-echo "Update config of fish" | lolcat
+#! /bin/sh
 
-ls -1 ~/.config/fish
-cp -r ~/.config/fish/* ./Fish/
+update_config() {
+	config_dir="$1"
+	echo "Update config of $config_dir" | lolcat
+	source_dir="$HOME/.config/$config_dir"
+	dest_dir="./$config_dir/"
 
-echo "Update config of oh-my-fish" | lolcat
+	if [ "$config_dir" = "scripts" ]; then
+		source_dir="$HOME/scripts"
+	fi
 
-ls -1 $OMF_PATH/themes/agnoster/functions
-cp -r $OMF_PATH/themes/agnoster/functions/* ./oh-my-fish/theme/
+	if [ -d "$source_dir" ]; then
+		echo "Copying files from $source_dir to $dest_dir"
+		cp -r "$source_dir"/* "$dest_dir"
+	else
+		echo "Source directory $source_dir not found."
+	fi
+}
 
-echo "Update config of picom" | lolcat
-
-ls -1 ~/.config/picom/
-cp ~/.config/picom/picom.conf ./picom/
-
-# echo "Update config of rofi" | lolcat
-#
-# ls -1 ~/.config/rofi/
-# cp ~/.config/rofi/config.rasi ./rofi/config.rasi
-# cp /usr/share/rofi/themes/arthur.rasi ./rofi/arthur.rasi
-
-echo "Update scripts" | lolcat
-
-ls -1 ~/scripts/
-cp -r ~/scripts/* ./scripts/
-
-echo "Update wezterm" | lolcat
-
-ls -1 ~/.config/wezterm/
-cp -r ~/.config/wezterm/* ./wezterm/
-
-echo "Update yazi" | lolcat
-
-ls -1 ~/.config/yazi/
-cp -r ~/.config/yazi/* ./yazi/
-
-echo "Update hypr" | lolcat
-
-ls -1 ~/.config/hypr/
-cp -r ~/.config/hypr/* ./hypr/
-
-echo "Update waybar" | lolcat
-
-ls -1 ~/.config/waybar/
-cp -r ~/.config/waybar/* ./waybar/
+if [ -z "$1" ]; then
+	update_config "fish"
+	update_config "oh-my-fish/theme"
+	update_config "picom"
+	update_config "scripts"
+	update_config "wezterm"
+	update_config "yazi"
+	update_config "hypr"
+	update_config "waybar"
+else
+	update_config "$1"
+fi

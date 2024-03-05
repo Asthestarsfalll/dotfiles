@@ -1,56 +1,49 @@
-echo "set back-up" | lolcat
-mkdir backup
+#! /bin/sh
 
-echo "Update config of fish" | lolcat
+backup_and_set_config() {
+	config_dir="$1"
+	source_dir=""
+	dest_dir=""
 
-ls -1 ~/.config/fish
-cp -r ~/.config/fish/* ./backup/Fish/
+	echo "Backup and Set $config_dir" | lolcat
 
-echo "Update config of oh-my-fish" | lolcat
+	# Backup config
+	source_dir="$HOME/.config/$config_dir"
+	dest_dir="./backup/$config_dir/"
+	move_dir="$HOME/.config/$config_dir/"
 
-ls -1 $OMF_PATH/themes/agnoster/functions
-cp -r $OMF_PATH/themes/agnoster/functions/* ./backup/oh-my-fish/theme/
+	mkdir -p "$dest_dir"
 
-# echo "Update config of rofi" | lolcat
-#
-# ls -1 ~/.config/rofi/
-# cp ~/.config/rofi/config.rasi .backup/rofi/config.rasi
-# cp /usr/share/rofi/themes/arthur.rasi ./backup/rofi/arthur
+	if [ "$config_dir" = "scripts" ]; then
+		source_dir="$HOME/scripts"
+		move_dir="$source_dir"
+	fi
 
-echo "Update scripts" | lolcat
+	if [ -d "$source_dir" ]; then
+		echo "Backing up $config_dir..."
+		cp -r "$source_dir"/* "$dest_dir"
+	else
+		echo "Source directory $source_dir not found."
+	fi
 
-ls -1 ~/scripts/
-cp -r ~/scripts/* ./backup/scripts/
+	# Set config
+	source_dir="./$config_dir"
 
-echo "set config" | lolcat
+	if [ -d "$source_dir" ]; then
+		echo "Setting $config_dir..."
+		cp -r "$source_dir"/* "$move_dir"
+	else
+		echo "Source directory $source_dir not found."
+	fi
+}
 
-echo "set config of fish" | lolcat
-
-ls -1 ./Fish/
-cp -r ./Fish/* ~/.config/fish/
-
-echo "set config of oh-my-fish" | lolcat
-
-ls -1 ./oh-my-fish/theme/
-cp -r ./oh-my-fish/theme/* $OMF_PATH/themes/agnoster/functions/
-
-# echo "set config of rofi" | lolcat
-#
-# ls -1 ./rofi/
-# cp ./rofi/config.rasi ~/.config/rofi/config.rasi
-# cp ./rofi/arthur.rasi /usr/share/rofi/themes/
-
-echo "set wezterm" | lolcat
-
-ls -1 ./wezterm
-cp -r ./wezterm/* ~/.config/wezterm/
-
-echo "set hypr" | lolcat
-
-ls -1 ./hypr
-cp -r ./hypr/* ~/.config/hypr/
-
-echo "set waybar" | lolcat
-
-ls -1 ./waybar
-cp -r ./waybar/* ~/.config/waybar/
+if [ -z "$1" ]; then
+	backup_and_set_config "fish"
+	backup_and_set_config "oh-my-fish/theme"
+	backup_and_set_config "scripts"
+	backup_and_set_config "wezterm"
+	backup_and_set_config "hypr"
+	backup_and_set_config "waybar"
+else
+	backup_and_set_config "$1"
+fi
