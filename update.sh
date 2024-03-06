@@ -19,7 +19,6 @@ update_config() {
 }
 
 if [ -z "$1" ]; then
-	update_config "fish"
 	update_config "oh-my-fish/theme"
 	update_config "picom"
 	update_config "scripts"
