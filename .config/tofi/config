@@ -1,0 +1,68 @@
+# Tofi 配置文件
+# 位置: ~/.config/tofi/config
+# 
+# 颜色配置（基于 gruvbox-material-dark-soft 主题）
+# 如果需要调整颜色，可以修改以下颜色值：
+# - 背景色: #282828
+# - 文本颜色: #d4be98
+# - 提示背景: #a9b665 (绿色)
+# - 输入背景: #3c3836 (浅灰)
+# - 交替结果背景: #d8a657 (黄色)
+# - 选中背景: #d3869b (粉色)
+
+# Font
+# font = Fredoka medium
+font = Hug Me Tight Regular
+font-size = 10
+
+# Window Style
+horizontal = true
+anchor = top
+width = 98%
+height = 40
+margin-top = 10
+margin-left = 1%
+margin-right = 1%
+
+outline-width = 0
+border-width = 0
+corner-radius = 12
+min-input-width = 60
+result-spacing = 15
+padding-top = 7
+padding-bottom = 0
+padding-left = 10
+padding-right = 0
+
+# Text style
+prompt-text = "Can I have a"
+prompt-padding = 15
+
+background-color = #282828
+text-color = #d4be98
+
+prompt-color = #282828
+prompt-background = #a9b665
+prompt-background-padding = 2, 5
+prompt-background-corner-radius = 6
+
+input-color = #282828
+input-background = #3c3836
+input-background-padding = 2, 5
+input-background-corner-radius = 6
+
+alternate-result-color = #282828
+alternate-result-background = #d8a657
+alternate-result-background-padding = 2, 5
+alternate-result-background-corner-radius = 6
+
+selection-color = #282828
+selection-background = #d3869b
+selection-background-padding = 2, 5
+selection-background-corner-radius = 6
+selection-match-color = #282828
+
+clip-to-padding = false
+
+history = true
+

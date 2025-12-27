@@ -1,0 +1,251 @@
+{
+  "editor.fontFamily": "'CaskaydiaCove Nerd Font'",
+  "editor.fontLigatures": false,
+  "explorer.confirmDelete": false,
+  "editor.fontSize": 16,
+  "terminal.integrated.fontSize": 16,
+  "editor.minimap.sectionHeaderFontSize": 12,
+  "window.menuBarVisibility": "toggle",
+  "security.workspace.trust.enabled": false,
+  "terminal.external.linuxExec": "kitty",
+  "terminal.explorerKind": "both",
+  "editor.lineNumbers": "relative",
+  "files.exclude": {
+    "**/.trunk/*actions/": true,
+    "**/.trunk/*logs/": true,
+    "**/.trunk/*notifications/": true,
+    "**/.trunk/*out/": true,
+    "**/.trunk/*plugins/": true
+  },
+  "files.watcherExclude": {
+    "**/.trunk/*actions/": true,
+    "**/.trunk/*logs/": true,
+    "**/.trunk/*notifications/": true,
+    "**/.trunk/*out/": true,
+    "**/.trunk/*plugins/": true
+  },
+  "terminal.integrated.inheritEnv": false,
+  "glassit.alpha": 255,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "python.defaultInterpreterPath": "/home/starfall/.conda/envs/core/bin/python",
+  "editor.tokenColorCustomizations": {
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    },
+    "textMateRules": [
+      {
+        "name": "One Dark italic",
+        "scope": [
+          "comment",
+          "entity.other.attribute-name",
+          "keyword",
+          "markup.underline.link",
+          "storage.modifier",
+          "storage.type",
+          "string.url",
+          "variable.language.super",
+          "variable.language.this"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "One Dark italic reset",
+        "scope": [
+          "keyword.operator",
+          "keyword.other.type",
+          "storage.modifier.import",
+          "storage.modifier.package",
+          "storage.type.built-in",
+          "storage.type.function.arrow",
+          "storage.type.generic",
+          "storage.type.java",
+          "storage.type.primitive"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "workbench.settings.applyToAllProfiles": [],
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "notebook.lineNumbers": "on",
+  "baidu.comate.username": "Never_Regret__",
+  "baidu.comate.license": "789d23b0-bb0e-4571-b79b-4eb0fd7b3a5a",
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "baidu.comate.langSuggestion": {
+    "all": true,
+    "cpp": true,
+    "css": true,
+    "go": true,
+    "html": true,
+    "java": true,
+    "javascript": true,
+    "less": true,
+    "perl": true,
+    "php": true,
+    "python": true,
+    "ruby": true,
+    "shell": true,
+    "swift": true,
+    "typescript": true,
+    "others": true,
+    "vue": true,
+    "san": true,
+    "sass": true,
+    "scss": true,
+    "vhdl": true,
+    "lua": true,
+    "mermaid": true,
+    "pug": true,
+    "swan": true,
+    "stylus": true,
+    "rust": true,
+    "kotlin": true,
+    "graphql": true,
+    "objectivec": true,
+    "yaml": true,
+    "protocolbuffer": true,
+    "antlr": true,
+    "markdown": true,
+    "stata": true,
+    "cmake": true,
+    "elm": true,
+    "agda": true,
+    "xslt": true,
+    "smalltalk": true,
+    "commonlisp": true,
+    "verilog": true,
+    "pascal": true,
+    "systemverilog": true,
+    "isabelle": true,
+    "julia": true,
+    "matlab": true,
+    "yacc": true,
+    "standardml": true,
+    "glsl": true,
+    "racket": true,
+    "haskell": true,
+    "dart": true,
+    "groovy": true,
+    "erlang": true,
+    "ada": true,
+    "scala": true,
+    "coffeescript": true,
+    "jupyter": true,
+    "fsharp": true,
+    "dockerfile": true,
+    "fortran": true,
+    "sql": true,
+    "elixir": true,
+    "visualbasic": true,
+    "literateagda": true,
+    "rmarkdown": true,
+    "ocaml": true,
+    "bluespec": true,
+    "javaserverpages": true,
+    "cuda": true,
+    "sparql": true,
+    "tex": true,
+    "solidity": true,
+    "powershell": true,
+    "maple": true,
+    "mathematica": true,
+    "applescript": true,
+    "csharp": true,
+    "zig": true,
+    "thrift": true,
+    "r": true,
+    "tcsh": true,
+    "restructuredtext": true,
+    "batchfile": true,
+    "prolog": true,
+    "scheme": true,
+    "assembly": true,
+    "json": true,
+    "makefile": true,
+    "literatehaskell": true,
+    "tcl": true,
+    "stan": true,
+    "sas": true,
+    "augeas": true,
+    "idris": true,
+    "emacslisp": true,
+    "clojure": true,
+    "literatecoffeescript": true,
+    "alloy": true,
+    "xml": true,
+    "awk": true,
+    "lean": true
+  },
+  "baidu.comate.enableSecurityEnhancement": false,
+  "baidu.comate.linePreferMode": "auto",
+  "baidu.comate.privateService": "",
+  "baidu.comate.beta": {
+    "enableFullStackIntelligence": true,
+    "enableSecurityIntelligence": true,
+    "enableCompletionIntelligence": false,
+    "enableDebugIntelligence": false
+  },
+  "baidu.comate.docstringOutputPosition": "editor",
+  "explorer.confirmPasteNative": false,
+  "explorer.confirmDragAndDrop": false,
+  "baidu.comate.completionLength": "auto",
+  "[html]": {
+    "editor.defaultFormatter": "j69.ejs-beautify"
+  },
+  "workbench.statusBar.visible": false,
+  "diffEditor.codeLens": true,
+  "window.commandCenter": false,
+  "workbench.iconTheme": "rose-pine-icons",
+  "[lua]": {
+    "editor.defaultFormatter": "Koihik.vscode-lua-format"
+  },
+  "baidu.comate.superCompletion": {
+    "superCompletion": false,
+    "autoImport": false
+  },
+  "workbench.colorTheme": "Rosé Pine",
+  "files.associations": {
+    "*.rmd": "markdown"
+  },
+  "baidu.comate.enableCodelens": {
+    "enableInlineUnitTest": true,
+    "enableInlineExplain": true,
+    "enableInlineDocstring": true,
+    "enableInlineSplit": true,
+    "enableInlineComment": true,
+    "enableInlineOptimize": true,
+    "enableInlineLog": true
+  },
+  "remote.SSH.defaultExtensions": [
+    "ms-python.python",
+    "ms-toolsai.jupyter-renderers",
+    "ms-toolsai.jupyter-keymap",
+    "ms-toolsai.jupyter"
+  ]
+}

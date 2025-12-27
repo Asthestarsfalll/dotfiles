@@ -1,0 +1,26 @@
+# Tofi 全屏配置文件
+# 位置: ~/.config/tofi/config-full
+# 
+# 颜色配置（基于 gruvbox-material-dark-soft 主题）
+# 如果需要调整颜色，可以修改以下颜色值：
+# - 背景色: #282828aa (带透明度)
+# - 文本颜色: #d4be98
+# - 提示颜色: #a9b665 (绿色)
+# - 选中颜色: #d3869b (粉色)
+
+width = 100%
+height = 100%
+border-width = 0
+outline-width = 0
+padding-left = 35%
+padding-top = 35%
+result-spacing = 25
+num-results = 5
+# font = Comic Mono Nerd Font
+font = Hug Me Tight
+prompt-padding = 15
+background-color = #282828aa
+text-color = #d4be98
+prompt-color = #a9b665
+selection-color = #d3869b
+

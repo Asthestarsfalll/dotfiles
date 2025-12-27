@@ -1,0 +1,61 @@
+# fotmat:
+# [name]
+# src_path=xxx, default to ~/.config/name/
+# des_path=xxx, default to ./Config/.config/name
+# include = [filename, ...], default to all
+# exclude = [filename, ...], default to empty
+# file_only = false, whether copy file only, default to false
+# folder_only = false, whether copy folder only, default to false
+
+
+[fish]
+
+[yazi]
+
+[fcitx]
+
+[fcitx5]
+
+[hypr]
+exclude = ['theme.ctl']
+file_only = true
+
+["Code/User"]
+include = ['settings.json']
+
+[kitty]
+include = ["kitty.conf"]
+
+[waybar]
+exclude = ["themes", "style.css", "theme.css"]
+
+[starship]
+src_path = "~/.config/"
+des_path = ".config"
+include = ["starship.toml"]
+
+[git]
+src_path = "~/"
+des_path = "./Configs/.config/"
+include = [".gitconfig"]
+
+[nvim]
+update = false
+set = true
+
+[ghostty]
+exclude = ['themes']
+
+[niri]
+
+[quickshell]
+
+[tofi]
+
+[rofi]
+
+["gtk-3.0"]
+
+["gtk-4.0"]
+
+["fontconfig"]

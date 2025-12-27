@@ -1,6 +1,4 @@
 [submodule "nvim"]
-	path = nvim
+	path = .config/nvim
 	url = https://github.com/Asthestarsfalll/AstroNvim.config
-[submodule "hyprdorts"]
-	path = hyprdorts
-	url = https://github.com/Asthestarsfalll/hyprdots
+

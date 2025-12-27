@@ -1,0 +1,67 @@
+[pyprland]
+plugins = ["scratchpads", "toggle_special", "fetch_client_menu", "layout_center"]
+
+[scratchpads.term]
+animation = "fromTop"
+command = "GTK_IM_MODULE=wayland ghostty --class=s.dropterm"
+class = "s.dropterm"
+size = "75% 60%"
+max_size = "1920px 100%"
+margin = 50
+multi = false
+allow_special_workspace = true
+
+[scratchpads.qq]
+animation = "fromLeft"
+command = "linuxqq"
+position = "42% 30%"
+class = "QQ"
+size = "17% 43%"
+margin = 50
+multi = true
+lazy = true
+
+[scratchpads.filemanager]
+animation = "fromLeft"
+command = "dolphin"
+size = "75% 70%"
+margin = 50
+multi = false
+lazy = true
+skip_windowrules = ["aspect"]
+
+[scratchpads.music]
+animation = "fromBottom"
+command = "yesplaymusic mediaplayer --player yesplaymusic"
+class = "yesplaymusic"
+size = "70% 60%"
+lazy = true
+multi = false
+
+[scratchpads.typora]
+animation = "fromLeft"
+command = "typora"
+class = "typora"
+size = "70% 60%"
+lazy = true
+multi = true
+
+[scratchpads.obsidian]
+animation = "fromRight"
+command = "obsidian"
+class = "obsidian"
+size = "80% 80%"
+lazy = true
+multi = false
+
+[layout_center]
+margin = 60
+offset = [0, 30]
+next = "movefocus r"
+prev = "movefocus l"
+next2 = "movefocus d"
+prev2 = "movefocus u"
+multi = false
+
+[menu]
+engine = "rofi"
