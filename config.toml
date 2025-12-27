@@ -36,7 +36,7 @@ include = ["starship.toml"]
 
 [git]
 src_path = "~/"
-des_path = "./Configs/.config/"
+des_path = ".config"
 include = [".gitconfig"]
 
 [nvim]
