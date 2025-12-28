@@ -1,0 +1,49 @@
+{
+  "alarmClock": {
+    "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "dankDesktopWeather": {
+    "enabled": true
+  },
+  "displaySettings": {
+    "enabled": true
+  },
+  "grimblast": {
+    "enabled": true
+  },
+  "dankPomodoroTimer": {
+    "enabled": true
+  },
+  "pulsarX3": {
+    "enabled": false
+  },
+  "commandRunner": {
+    "enabled": true,
+    "terminal": "ghostty",
+    "history": [
+      "awww-daemon --namespace awww-wallpaper&"
+    ]
+  },
+  "dankActions": {
+    "enabled": true,
+    "variants": [
+      {
+        "icon": "Wallpaper",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "pkill awww-daemon || pkill awww || awww-daemon --namespace awww-wallpaper",
+        "middleClickCommand": "notify-send 'test'",
+        "rightClickCommand": "pkill hyprlax | bash -c \"~/.local/bin/hyprlax $(dms ipc wallpaper get)\" && disown",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": true,
+        "id": "variant_1766637749798",
+        "name": "Background"
+      }
+    ]
+  }
+}

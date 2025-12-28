@@ -6,7 +6,7 @@ zoxide init fish | source
 
 # List Directory
 alias l='eza -lh  --icons=auto' # long list
-alias ls='eza -1   --icons=auto' # short list
+alias ls='eza --icons=auto' # short list
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
 alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza --icons=auto --tree' # list folder as tree
@@ -146,7 +146,7 @@ alias cw 'cd /data/workspace'
 alias cb 'cd /data/workspace/Blog'
 alias cs 'nv ~/.scratch.md'
 
-alias vim 'neovide --no-multigrid'
+alias vide 'neovide --no-multigrid'
 
 alias pv 'sh ~/scripts/preview.sh'
 alias lv 'lvim'

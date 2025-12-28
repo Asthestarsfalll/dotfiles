@@ -964,8 +964,8 @@ binds {
 
     Mod+WheelScrollRight      { focus-column-right; }
     Mod+WheelScrollLeft       { focus-column-left; }
-    //Mod+Shift+WheelScrollRight { move-column-right; }
-    //Mod+Shift+WheelScrollLeft  { move-column-left; }
+    // Mod+Shift+MouseButton:Forward { move-column-right; }
+    // Mod+Shift+WheelScrollLeft  { move-column-left; }
 
     // Usually scrolling up and down with Shift in applications results in
     // horizontal scrolling; these binds replicate that.

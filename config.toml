@@ -46,7 +46,11 @@ set = true
 [ghostty]
 exclude = ['themes']
 
+[wezterm]
+
 [niri]
+
+[zellij]
 
 [quickshell]
 
@@ -58,4 +62,11 @@ exclude = ['themes']
 
 ["gtk-4.0"]
 
-["fontconfig"]
+[fontconfig]
+
+[DankMaterialShell]
+
+[sddm]
+src_path = "/usr/share/sddm/"
+des_path = "user/share/sddm"
+
